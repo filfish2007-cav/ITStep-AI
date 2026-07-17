@@ -25,7 +25,7 @@ height, width, channels = image_corp.shape
 
 for i in range(len(masks_data)):
     mask = masks_data[i]
-    mask = cv2.resize(mask, (height, width)).astype(bool)
+    mask = cv2.resize(mask, (width, height)).astype(bool)
     copy = image_corp.copy()
     copy[~mask] = 255
     cv2.imshow(f"plant{i}",copy)
@@ -84,3 +84,5 @@ cv2.imshow("mask3", mask3_uint)
 
 
 cv2.waitKey(0)
+
+cv2.destroyAllWindows()
