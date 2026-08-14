@@ -16,21 +16,21 @@ api_key = os.getenv('GEMINI_API_KEY')
 import langchain
 from langchain_google_genai import GoogleGenerativeAI
 
-print(langchain.__version__)
+#print(langchain.__version__)
 # # root/
 # #   - langchain.py
 # #   - langchain_google_genai.py
 #
 # # # створення моделі
-# # llm = GoogleGenerativeAI(
-# #     model='gemini-2.5-flash-lite',   # назва моделі
-# #     api_key=api_key
-# # )
+llm = GoogleGenerativeAI(
+     model='gemini-3.5-flash-lite',   # назва моделі
+     api_key=api_key
+ )
 # #
 # # # запуск моделі
-# # response = llm.invoke('Привіт, що таке LLM?')
+response = llm.invoke('Привіт, що таке recursive CTEs in short?')
 # #
-# # print(response)
+print(response)
 #
 #
 # # Як це працює
