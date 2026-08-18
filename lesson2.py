@@ -48,7 +48,7 @@ prompt = PromptTemplate.from_template("""
 """)
 
 # створення ланцюга
-chain = prompt | llm
+chain = prompt | llm    
 
 # # використання
 # response = chain.invoke(
