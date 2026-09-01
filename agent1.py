@@ -14,12 +14,10 @@ from langchain_core.messages import (
 )
 
 
-# завантаження апі ключа
 dotenv.load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
 serper_api_key = os.getenv("SERPER_API_KEY")
 
-# створити llm
 llm = ChatGoogleGenerativeAI(
     model='gemini-3.5-flash-lite',
     api_key=gemini_api_key,
@@ -62,14 +60,12 @@ def check_password_complexity(password: str) -> str:
     else:
         bad.append("Пароль не містить спеціальних символів.")
 
-    # 3. Перевірка регістрів
     if has_letters:
         if any(char.islower() for char in password) and any(char.isupper() for char in password):
             good.append("Присутні літери в різних регістрах (великі та малі).")
         else:
             bad.append("Бракує літер у різних регістрах (потрібні і великі, і малі).")
 
-    # Формування результату
     result = "Аналіз паролю:\n\n"
     if good:
         result += "ДОБРЕ:\n- " + "\n- ".join(good) + "\n\n"
