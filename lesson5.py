@@ -24,6 +24,7 @@ serper_api_key = os.getenv("SERPER_API_KEY")
 llm = ChatGoogleGenerativeAI(
     model='gemini-2.5-flash',
     api_key=gemini_api_key,
+    serper_api_key=serper_api_key,
 )
 
 # інструмент -- функція
