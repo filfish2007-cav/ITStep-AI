@@ -112,8 +112,8 @@ if user_query:
 
     for message in st.session_state['history']:
         # пропускаємо SystemMessage
-        # if isinstance(message, SystemMessage):
-        #     continue
+        if isinstance(message, SystemMessage):
+            continue
 
         # отримати вміст
         text = message.text
