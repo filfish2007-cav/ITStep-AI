@@ -53,7 +53,7 @@ api_key = st.secrets.get("GEMINI_API_KEY")
 
 # створити llm
 llm = ChatGoogleGenerativeAI(
-    model='gemini-2.5-flash-lite',
+    model='gemini-3.5-flash-lite',
     api_key=api_key,
 )
 
@@ -95,7 +95,7 @@ for message in st.session_state['history']:
         continue
 
     # отримати вміст
-    text = message.content
+    text = message.text
 
     # отримати роль
     if isinstance(message, HumanMessage):
