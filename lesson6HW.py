@@ -25,7 +25,7 @@ llm = ChatGoogleGenerativeAI(
 )
 
 embedding = GoogleGenerativeAIEmbeddings(
-    model="models/text-embedding-001",
+    model="gemini-embedding-001",
     api_key=api_key,
 )
 

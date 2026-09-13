@@ -18,7 +18,7 @@ pinecone_api_key = os.getenv("PINECONE_API_KEY")
 
 
 embeddings = GoogleGenerativeAIEmbeddings(
-    model="models/text-embedding-001",
+    model="gemini-embedding-001",
     api_key=gemini_api_key
 )
 
