@@ -22,7 +22,7 @@ pinecone_api_key = os.getenv("PINECONE_API_KEY")
 # модель для кодування текстів(embedding model)
 embeddings = GoogleGenerativeAIEmbeddings(
     model="models/text-embedding-004",
-    google_api_key=gemini_api_key
+    api_key=gemini_api_key
 )
 
 # # кодування текстів
