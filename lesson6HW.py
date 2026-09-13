@@ -8,7 +8,6 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_pinecone import PineconeVectorStore
 from langchain.agents import create_agent
 from langchain_core.tools import tool
-from langchain_community.utilities import GoogleSerperAPIWrapper
 from pinecone import Pinecone
 from langchain_core.messages import (
     HumanMessage,
@@ -18,16 +17,11 @@ from langchain_core.messages import (
 dotenv.load_dotenv()
 
 api_key = os.getenv("GEMINI_API_KEY")
-serper_key = os.getenv("SERPER_API_KEY")
 pinecone_api_key = os.getenv("PINECONE_API_KEY")
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-3.5-flash-lite",
     api_key=api_key
-)
-
-serper_search = GoogleSerperAPIWrapper(
-    serper_api_key=serper_key
 )
 
 embedding = GoogleGenerativeAIEmbeddings(
